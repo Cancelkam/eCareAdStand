@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tariffs</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/index.css}" rel="stylesheet">
+    </head>
+<body>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Tariffs</h1>
+    <p class="fs-5 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+<main>
+    <form th:action="@{/tariffs}" method="post">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tariff: ${tariff}">
+                <!--/*@thymesVar id="title" type=""*/-->
+                <td th:text="${tariff.title}">N/A</td>
+                <td th:text="${tariff.price}">N/A</td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</main>
+</div>
+
+
+
+</body>
+</html>
